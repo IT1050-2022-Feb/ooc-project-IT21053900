@@ -1,0 +1,108 @@
+// OOC Assigment 2 
+// topic:Online Land sales
+// IT21053900  Silva W.I.S
+
+class Seller;
+class Buyer;
+
+#include<iostream.h>
+#include<cstring>
+
+using namespace std;
+
+class Seller :public RegisteredCustomer{
+private:
+     int noOfLands;
+     Lands* sellLands[SIZE];
+
+public:
+	 Seller();
+	 Seller(const char usName[], const char usPwd[], int id, const char name[], const char address[], const char email[], const char telno[], int pnoOfLands);
+     void addSellingLands(Lands* psellLands);
+     void login();
+     void displaySellerDetails();
+     ~Seller();
+};
+
+
+Seller::Seller()
+{
+noOfLands = 0;
+}
+Seller::Seller(const char usName[], const char usPwd[], int id, const char name[], const char address[], const char email[], constchar tellno[], int pnoOfLands) :RegisteredCustomer(usName, usPwd, id, name, address, email, telno)
+{
+noOfLands = pnoOfLands;
+}
+
+
+void Seller::addSellingLands(Lands* psellLands)
+{
+if (noOfLands < SIZE)
+{
+sellLands[noOfLands] = psellLands;
+noOfLands++;
+}
+}
+void Seller::login()
+{
+	
+}
+void Seller::displaySellerDetails()
+{
+}
+
+Seller::~Seller()
+{
+
+}
+
+
+Buyer
+
+
+class Buyer : public RegisteredCustomer
+{
+private:
+ int noOflands;
+ land* buyLands[SIZE];
+
+public:
+
+ Buyer();
+ Buyer(cons char usName[], cons char usPwd[], int id, cons char name[], cons char address[], cons char email[], cons char telno[],int pnoOfLands);
+ void addBuyingLands(Lands* pbuyLands);
+ void login();
+ void displayBuyerDetails();
+ ~Buyer();
+};
+
+
+Buyer::Buyer()
+{
+noOfLands = 0;
+}
+Buyer::Buyer(cons char usName[], cons char usPwd[], int id, constchar name[], cons char address[], cons char email[], cons chartelno[], int pnoOfLands:RegisteredCustomer(usName,usPwd, id, name, address, email, telno)
+{
+noOfLands = pnoOfLands;
+}
+void Buyer::addBuyingLands(Lands* pbuyLands)
+{
+if (noOfLands < SIZE)
+{
+buyLands[noOfLands] = pbuyLands;
+noOfLands++;
+}
+}
+void Buyer::login()
+{
+}
+void Buyer::displayBuyerDetails()
+{
+}
+Buyer::~Buyer()
+{
+ 
+for (int i = 0; i < SIZE; i++)
+{
+delete buyLands[i];
+}
